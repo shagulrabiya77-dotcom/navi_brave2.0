@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brave Step | Live Indoor Navigation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">BRAVE<span>STEP</span></div>
+        <p>ACCESSIBLE INDOOR NAVIGATION</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <p class="tag">SMART HOSPITAL NAVIGATION</p>
+            <h1>Find Your Way.<br><span>Move With Confidence.</span></h1>
+            <p class="description">
+                Scan your location QR code, choose your destination
+                and receive step-by-step voice guidance.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>01. Your Current Location</h2>
+            <p class="subtext">Scan the QR code at your current checkpoint.</p>
+
+            <div id="reader"></div>
+
+            <div class="location-box">
+                <span>YOUR LOCATION</span>
+                <h3 id="currentLocation">Not detected</h3>
+                <p id="currentFloor">Ground Floor</p>
+            </div>
+
+            <button class="secondary-btn" id="startScanner">
+                Start QR Scanner
+            </button>
+            <button class="secondary-btn stop-btn" id="stopScanner">
+                Stop Scanner
+            </button>
+        </section>
+
+        <section class="panel">
+            <h2>02. Choose Destination</h2>
+            <p class="subtext">Where would you like to go?</p>
+
+            <label for="destination">Destination</label>
+            <select id="destination">
+                <option value="">Select destination</option>
+                <option value="QR01">Main Entrance</option>
+                <option value="QR02">Reception</option>
+                <option value="QR03">Waiting Hall</option>
+                <option value="QR04">Pharmacy</option>
+                <option value="QR05">Laboratory</option>
+            </select>
+
+            <button class="primary-btn" id="startNavigation">
+                Start Navigation
+            </button>
+        </section>
+
+        <section class="panel navigation-panel">
+            <h2>03. Live Voice Guidance</h2>
+
+            <div class="direction-icon" id="directionIcon">➜</div>
+
+            <h3 id="instruction">Waiting for navigation</h3>
+            <p id="nextStop">Scan your location to begin.</p>
+
+            <div class="route-progress">
+                <div id="progressBar"></div>
+            </div>
+
+            <p id="routeStatus">Route not started</p>
+
+            <button class="secondary-btn" id="repeatVoice">
+                Repeat Instruction
+            </button>
+            <button class="secondary-btn stop-btn" id="stopNavigation">
+                Stop Navigation
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>BRAVE STEP © 2026 | Accessible Technology for Everyone</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
